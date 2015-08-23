@@ -8,7 +8,7 @@ valor = 10
 print (u'Ok, vamos trocar %.2f para você.' %(valor))
 
 def get_melhor_troco(**kwargs):
-	unidades = (.001,.005,.010,.025,.050,1,2,5,10,20,50,100)
+	unidades = (.01,.05,.10,.25,.50,1,2,5,10,20,50,100)
 	unidades = sorted(unidades, reverse=True)	
 	
 	limit_unidade = kwargs.get('limit_unidade', {})
@@ -17,7 +17,7 @@ def get_melhor_troco(**kwargs):
 
 	tentativas = 0
 
-	while quantidade_por_unidade[.001]*.001 != valor:
+	while quantidade_por_unidade[.01]*.01 != valor:
 		resposta = []
 		tentativas += 1
 		troco = {}
